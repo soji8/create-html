@@ -7,14 +7,21 @@ module.exports = merge(common, {
   // devtool: 'inline-source-map',
   module: {
     rules: [
-        {
-            test: /\.(c|le)ss$/i,
-            use: [
-                "style-loader",
-                "css-loader",
-                'less-loader'
-            ]
-        }
+      {
+          test: /\.css$/i,
+          use: [
+              "style-loader",
+              "css-loader",
+          ]
+      },
+      {
+          test: /\.less$/i,
+          use: [
+              "style-loader",
+              "css-loader",
+              'less-loader'
+          ]
+      }
     ]
   },
   devServer: {
