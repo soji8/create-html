@@ -1,0 +1,175 @@
+@imagePath: '../images/';
+
+.img(@url) {
+  background-image: url("@{imagePath}@{url}");
+}
+
+.bg-default(@url, @size: 100% 100%) {
+  background-repeat: no-repeat;
+  .img(@url);
+  background-size: @size;
+}
+
+.font(@size, @color: inherit) {
+  font-size: @size + 0px;
+  color: @color;
+}
+.x3(@property, @val) when (@val = auto){
+  @{property}: @val;
+}
+.x3(@property, @val) when not(@val = auto){
+  @num: (@val / 4 * 3) + 0px;
+  @{property}: @num;
+}
+.x3-font(@size, @color) {
+  .x3(font-size, @size);
+  color: @color;
+}
+
+// x3 padding
+.x3-padding-4(@top, @right, @bottom, @left) when (@top = auto){
+  @nright: (@right / 4 * 3) + 0px;
+  @nbottom: (@bottom / 4 * 3) + 0px;
+  @nleft: (@left / 4 * 3) + 0px;
+  padding: @top @nright @nbottom @nleft;
+}
+.x3-padding-4(@top, @right, @bottom, @left) when (@right = auto){
+  @ntop: (@top / 4 * 3) + 0px;
+  @nbottom: (@bottom / 4 * 3) + 0px;
+  @nleft: (@left / 4 * 3) + 0px;
+  padding: @ntop @right @nbottom @nleft;
+}
+.x3-padding-4(@top, @right, @bottom, @left) when (@bottom = auto){
+  @ntop: (@top / 4 * 3) + 0px;
+  @nright: (@right / 4 * 3) + 0px;
+  @nleft: (@left / 4 * 3) + 0px;
+  padding: @ntop @nright @bottom @nleft;
+}
+.x3-padding-4(@top, @right, @bottom, @left) when (@left = auto){
+  @ntop: (@top / 4 * 3) + 0px;
+  @nright: (@right / 4 * 3) + 0px;
+  @nbottom: (@bottom / 4 * 3) + 0px;
+  padding: @ntop @nright @nbottom @left;
+}
+.x3-padding-4(@top, @right, @bottom, @left) when (not(@top = auto) and not(@right = auto) and not(@bottom = auto) and not(@bottom = left)){
+  @ntop: (@top / 4 * 3) + 0px;
+  @nright: (@right / 4 * 3) + 0px;
+  @nbottom: (@bottom / 4 * 3) + 0px;
+  @nleft: (@left / 4 * 3) + 0px;
+  padding: @ntop @nright @nbottom @nleft;
+}
+.x3-padding-3(@top, @center, @bottom) when (@top = auto){
+  @ncenter: (@center / 4 * 3) + 0px;
+  @nbottom: (@bottom / 4 * 3) + 0px;
+  padding: @top @ncenter @nbottom;
+}
+.x3-padding-3(@top, @center, @bottom) when (@center = auto){
+  @ntop: (@top / 4 * 3) + 0px;
+  @nbottom: (@bottom / 4 * 3) + 0px;
+  padding: @ntop @center @nbottom;
+}
+.x3-padding-3(@top, @center, @bottom) when (@bottom = auto){
+  @ntop: (@top / 4 * 3) + 0px;
+  @ncenter: (@center / 4 * 3) + 0px;
+  padding: @ntop @ncenter @bottom;
+}
+.x3-padding-3(@top, @center, @bottom) when (not(@center = auto) and not(@top = auto) and not(@bottom = auto)){
+  @ntop: (@top / 4 * 3) + 0px;
+  @ncenter: (@center / 4 * 3) + 0px;
+  @nbottom: (@bottom / 4 * 3) + 0px;
+  padding: @ntop @ncenter @nbottom;
+}
+.x3-padding-2(@x, @y) when (@x = auto){
+  @ny: (@y / 4 * 3) + 0px;
+  padding: @x @ny;
+}
+.x3-padding-2(@x, @y) when (@y = auto){
+  @nx: (@x / 4 * 3) + 0px;
+  padding: @nx @y;
+}
+.x3-padding-2(@x, @y) when (not(@x = auto) and not(@y = auto)){
+  @nx: (@x / 4 * 3) + 0px;
+  @ny: (@y / 4 * 3) + 0px;
+  padding: @nx @ny;
+}
+.x3-padding-1(@val) when (@val = auto){
+  padding: @nval;
+}
+.x3-padding-1(@val) when not(@val = auto){
+  @nval: (@val / 4 * 3) + 0px;
+  padding: @nval;
+}
+
+// .x3 margin
+.x3-margin-4(@top, @right, @bottom, @left) when (@top = auto){
+  @nright: (@right / 4 * 3) + 0px;
+  @nbottom: (@bottom / 4 * 3) + 0px;
+  @nleft: (@left / 4 * 3) + 0px;
+  margin: @top @nright @nbottom @nleft;
+}
+.x3-margin-4(@top, @right, @bottom, @left) when (@right = auto){
+  @ntop: (@top / 4 * 3) + 0px;
+  @nbottom: (@bottom / 4 * 3) + 0px;
+  @nleft: (@left / 4 * 3) + 0px;
+  margin: @ntop @right @nbottom @nleft;
+}
+.x3-margin-4(@top, @right, @bottom, @left) when (@bottom = auto){
+  @ntop: (@top / 4 * 3) + 0px;
+  @nright: (@right / 4 * 3) + 0px;
+  @nleft: (@left / 4 * 3) + 0px;
+  margin: @ntop @nright @bottom @nleft;
+}
+.x3-margin-4(@top, @right, @bottom, @left) when (@left = auto){
+  @ntop: (@top / 4 * 3) + 0px;
+  @nright: (@right / 4 * 3) + 0px;
+  @nbottom: (@bottom / 4 * 3) + 0px;
+  margin: @ntop @nright @nbottom @left;
+}
+.x3-margin-4(@top, @right, @bottom, @left) when (not(@top = auto) and not(@right = auto) and not(@bottom = auto) and not(@bottom = left)){
+  @ntop: (@top / 4 * 3) + 0px;
+  @nright: (@right / 4 * 3) + 0px;
+  @nbottom: (@bottom / 4 * 3) + 0px;
+  @nleft: (@left / 4 * 3) + 0px;
+  margin: @ntop @nright @nbottom @nleft;
+}
+.x3-margin-3(@top, @center, @bottom) when (@top = auto){
+  @ncenter: (@center / 4 * 3) + 0px;
+  @nbottom: (@bottom / 4 * 3) + 0px;
+  margin: @top @ncenter @nbottom;
+}
+.x3-margin-3(@top, @center, @bottom) when (@center = auto){
+  @ntop: (@top / 4 * 3) + 0px;
+  @nbottom: (@bottom / 4 * 3) + 0px;
+  margin: @ntop @center @nbottom;
+}
+.x3-margin-3(@top, @center, @bottom) when (@bottom = auto){
+  @ntop: (@top / 4 * 3) + 0px;
+  @ncenter: (@center / 4 * 3) + 0px;
+  margin: @ntop @ncenter @bottom;
+}
+.x3-margin-3(@top, @center, @bottom) when (not(@center = auto) and not(@top = auto) and not(@bottom = auto)){
+  @ntop: (@top / 4 * 3) + 0px;
+  @ncenter: (@center / 4 * 3) + 0px;
+  @nbottom: (@bottom / 4 * 3) + 0px;
+  margin: @ntop @ncenter @nbottom;
+}
+.x3-margin-2(@x, @y) when (@x = auto){
+  @ny: (@y / 4 * 3) + 0px;
+  margin: @x @ny;
+}
+.x3-margin-2(@x, @y) when (@y = auto){
+  @nx: (@x / 4 * 3) + 0px;
+  margin: @nx @y;
+}
+.x3-margin-2(@x, @y) when (not(@x = auto) and not(@y = auto)){
+  @nx: (@x / 4 * 3) + 0px;
+  @ny: (@y / 4 * 3) + 0px;
+  margin: @nx @ny;
+}
+.x3-margin-1(@val) when not(@val = auto){
+  @nval: (@val / 4 * 3) + 0px;
+  margin: @nval;
+}
+.x3-margin-1(@val) when (@val = auto){
+  margin: @val;
+}

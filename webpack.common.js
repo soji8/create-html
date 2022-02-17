@@ -4,7 +4,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: '[name][hash:6].js',
+    filename: '[name].[hash:6].js',
     path: resolve(__dirname, 'build')
   },
   module: {
@@ -17,14 +17,14 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
         generator: {
-            filename: 'static/images/[hash:6][ext][query]'
+            filename: 'static/images/[name].[hash:6][ext][query]'
         }
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
         generator: {
-            filename: 'static/font/[hash:6][ext][query]'
+            filename: 'static/font/[name].[hash:6][ext][query]'
         }
       },
       // { exclude: /\.(html|css|less|js|img|png|gif)$/ }
